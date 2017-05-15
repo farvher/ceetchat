@@ -15,18 +15,16 @@ public class IndexController {
 
 	private static final String INDEX = "index";
 
-	@GetMapping(value = "/{word:.*}")
+	@GetMapping(value = "/dym/{word:.*}")
 	@ResponseBody
 	public String index(Model model, @PathVariable String word) {
 
 		StringBuilder str = new StringBuilder();
-
 		List<Object> list = DidYouMean.getSuggestions(word, 5);
 		for (Object w : list) {
 			str.append(w);
 			str.append(" - ");
 		}
-
 		return "quisiste decir: " + str.toString();
 	}
 	

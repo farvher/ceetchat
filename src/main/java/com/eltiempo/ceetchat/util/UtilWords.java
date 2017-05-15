@@ -36,7 +36,6 @@ public class UtilWords {
 		List<String> questions = this.proccess(question);
 		for (String q : questions) {
 			str.append(q);
-			str.append(NEW_LINE);
 		}
 		return str.toString();
 	}
@@ -66,10 +65,13 @@ public class UtilWords {
 	}
 
 	public void saveWord(String word) {
+		DidYouMean.dictionary.addWord(word);
 		File f = new File(DidYouMean.class.getResource("/dict.txt").getFile());
 		Path p = Paths.get(f.getAbsolutePath());
+		
 		try {
-			Files.write(p, word.getBytes(),StandardOpenOption.APPEND,StandardOpenOption.WRITE);
+			Files.write(p, ("\n"+word).getBytes(),StandardOpenOption.APPEND,StandardOpenOption.WRITE);
+			logger.info(word+ " saved");
 		} catch (Exception ex) {
 			logger.error("error write",ex);
 		}

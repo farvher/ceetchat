@@ -11,14 +11,16 @@ public class CommonsWords {
 
 	String word;
 	
-	List<Filters> filter;
+	Filters filter;
 
 
-	public List<Filters> getFilter() {
+
+
+	public Filters getFilter() {
 		return filter;
 	}
 
-	public void setFilter(List<Filters> filter) {
+	public void setFilter(Filters filter) {
 		this.filter = filter;
 	}
 

@@ -9,7 +9,6 @@ public class Filters {
 	@Id
 	private Long id;
 
-	private String filterName;
 
 	private Boolean active;
 
@@ -51,13 +50,6 @@ public class Filters {
 		this.id = id;
 	}
 
-	public String getFilterName() {
-		return filterName;
-	}
-
-	public void setFilterName(String filterName) {
-		this.filterName = filterName;
-	}
 
 	public Boolean getActive() {
 		return active;
