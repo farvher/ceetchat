@@ -10,6 +10,8 @@ public class DocumentDTO implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	private String documentName;
+	
 	private String question;
 	
 	private Long business;
@@ -48,6 +50,14 @@ public class DocumentDTO implements Serializable{
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+
+	public String getDocumentName() {
+		return documentName;
+	}
+
+	public void setDocumentName(String documentName) {
+		this.documentName = documentName;
 	}
 	
 	

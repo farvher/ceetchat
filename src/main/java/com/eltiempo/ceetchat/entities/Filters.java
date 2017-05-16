@@ -17,6 +17,16 @@ public class Filters {
 	private Business business;
 	
 	List<Document> documents;
+	
+	List<CommonsWords> commonsWords;
+
+	public List<CommonsWords> getCommonsWords() {
+		return commonsWords;
+	}
+
+	public void setCommonsWords(List<CommonsWords> commonsWords) {
+		this.commonsWords = commonsWords;
+	}
 
 	public Category getCategory() {
 		return category;

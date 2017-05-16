@@ -11,18 +11,7 @@ public class CommonsWords {
 
 	String word;
 	
-	Filters filter;
 
-
-
-
-	public Filters getFilter() {
-		return filter;
-	}
-
-	public void setFilter(Filters filter) {
-		this.filter = filter;
-	}
 
 	public Long getId() {
 		return id;

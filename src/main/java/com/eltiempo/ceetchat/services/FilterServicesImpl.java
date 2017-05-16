@@ -29,13 +29,6 @@ public class FilterServicesImpl implements FilterServices {
 	public List<Document> findDocumentsByQuestion(String question) {
 
 		List<Document> documents = new ArrayList<>();
-		CommonsWords commonsWords = commonsWordsRepository.findFirstByWordLike(question.toLowerCase().trim());
-		if (commonsWords != null) {
-			Filters f = commonsWords.getFilter();
-			if (f != null) {
-				documents.addAll(f.getDocuments());
-			}
-		}
 		return documents;
 	}
 

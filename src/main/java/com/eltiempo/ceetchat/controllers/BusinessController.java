@@ -31,6 +31,7 @@ public class BusinessController {
 		business.setDescription(description);
 		business.setLogo(logo);
 		business.setUrl(url);
+		businessRepository.save(business);
 		return "saved";
 	}
 
