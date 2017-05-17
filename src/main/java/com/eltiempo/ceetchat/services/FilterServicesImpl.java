@@ -11,6 +11,9 @@ import com.eltiempo.ceetchat.entities.Document;
 import com.eltiempo.ceetchat.entities.Filters;
 import com.eltiempo.ceetchat.repository.CommonsWordsRepository;
 import com.eltiempo.ceetchat.repository.DocumentRepository;
+import com.eltiempo.ceetchat.repository.FiltersRepository;
+
+import ch.qos.logback.core.filter.Filter;
 
 @Service
 public class FilterServicesImpl implements FilterServices {
@@ -18,8 +21,10 @@ public class FilterServicesImpl implements FilterServices {
 	@Autowired
 	CommonsWordsRepository commonsWordsRepository;
 
+	
 	@Autowired
-	DocumentRepository DocumentRepository;
+	FiltersRepository filtersRepository;
+	
 
 	/**
 	 * Busca en mongo los documentos que pertenenzcan a los filtros relacionados
@@ -27,8 +32,15 @@ public class FilterServicesImpl implements FilterServices {
 	 */
 	@Override
 	public List<Document> findDocumentsByQuestion(String question) {
-
+		
+		String [] keyWords = question.split(" ");
 		List<Document> documents = new ArrayList<>();
+		
+		List<Filters> filters  = filtersRepository.findAll();
+		for(Filters f : filters){
+			documents.addAll(f.getDocuments());
+		}
+		
 		return documents;
 	}
 

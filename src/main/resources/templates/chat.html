@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apartamentos y casas en venta o arriendo en Colombia -
+	Metrocuadrado</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+<link href="/css/chat-estilos.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+	<img src="/img/m2-print.jpeg" width="962" height="3004" alt=""
+		class="center-block img-responsive" />
+	<div class="contenedor">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-xs-12 col-md-push-9">
+					<div class="panel panel-primary">
+						<div class="panel-heading" id="accordion">
+							<span class="glyphicon glyphicon-comment"></span> Chat M2&nbsp;
+							<div class="btn-group pull-right">
+								<a type="button" class="btn btn-default btn-xs"
+									data-toggle="collapse" data-parent="#accordion"
+									onclick="collapse()"> <span
+									class="glyphicon glyphicon-chevron-down"></span>
+								</a>
+							</div>
+						</div>
+						<div class="panel-collapse collapse" id="collapseOne">
+							<div class="panel-body">
+								<ul class="chat" id="chatBox">
+									<li class="left clearfix"><span class="chat-img pull-left">
+											<img src="http://placehold.it/50/f3b073/fff&text=M2"
+											alt="User Avatar" class="img-circle" />
+									</span>
+										<div class="chat-body clearfix">
+											<div class="header">
+												<strong class="primary-font">Agente M2</strong> <small
+													class="pull-right text-muted"> </small>
+											</div>
+											<p>Bienvenido al chat de respuestas automaticas Metrocuadrado.</p>
+											¿En que podemos ayudarte?.
+											</p>
+										</div></li>
+									<li class=" clearfix hidden right " id="fragmentChat"><span
+										class="chat-img pull-right"> <img
+											src="http://placehold.it/50/FA6F57/fff&text=YO"
+											alt="User Avatar" class="img-circle" />
+									</span>
+										<div class="chat-body clearfix">
+											<div class="header">
+												<small class=" text-muted"> <strong
+													class="pull-right primary-font">Yo</strong>
+											</div>
+											<p></p>
+										</div></li>
+								
+										<li class="left clearfix hidden"  id="fragmentChat2"><span class="chat-img pull-left">
+											<img src="http://placehold.it/50/f3b073/fff&text=M2"
+											alt="User Avatar" class="img-circle" />
+									</span>
+										<div class="chat-body clearfix">
+											<div class="header">
+												<strong class="primary-font">Agente M2</strong> <small
+													class="pull-right text-muted"> </small>
+											</div>
+											<p></p>
+										</div></li>
+
+								</ul>
+							</div>
+							<div class="panel-footer">
+								<form id="ceetchat">
+									<div class="input-group">
+										<input id="btn-input" type="text" autocomplete="off"
+											class="form-control input-sm"
+											placeholder="Escriba su inquietud aquí..." /> <span
+											class="input-group-btn">
+											<button class="btn btn-warning btn-sm" id="btn-chat">
+												Send</button>
+										</span>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+function collapse(){
+$("#collapseOne").toggle("slow");
+	
+}
+</script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/ceetchat.js" />
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</html>

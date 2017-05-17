@@ -89,7 +89,7 @@ public class CommonsWordsController {
 		for (String k : keyWords) {
 			CommonsWords commonsWords = new CommonsWords();
 			commonsWords.setWord(k);
-			commonsWords.setId(commonsWordsRepository.count() + 1);
+			commonsWords.setId(consecutiveService.getConsecutive(ConsecutiveEnum.COMMONSWORDS));
 			filters.getCommonsWords().add(commonsWords);
 		}
 		filtersRepository.save(filters);
