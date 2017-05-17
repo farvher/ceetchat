@@ -36,8 +36,13 @@ $(function() {
 
 	search = function(data) {
 		var titleResponse = "<h6>Te aconsejamos consultar la siguiente informacion : </h6>";
-
-		addResponse(fragmentChat2,  titleResponse+optionsDocument(data.documents) + dym(data.question, data.suggestions) );
+		var sinResultados = "<h6>Lo sentimos. Tu busqueda no tiene resultados</h6>";
+		var count = data.documents.length;
+		
+		var response = count==0 ? sinResultados : titleResponse;
+		response +=optionsDocument(data.documents);
+		response +=dym(data.question, data.suggestions)
+		addResponse(fragmentChat2,  response  );
 	}
 
 	function addResponse(fragment, msj) {

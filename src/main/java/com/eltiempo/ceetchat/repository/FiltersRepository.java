@@ -16,5 +16,5 @@ public interface FiltersRepository extends MongoRepository<Filters, Long>{
 	
 	
 	@Query
-	List<Filters> findByCommonsWordsId(String[] commonsWords);
+	List<Filters> findByCommonsWordsWordIn(String[] commonsWords);
 }

@@ -36,7 +36,7 @@ public class FilterServicesImpl implements FilterServices {
 		String [] keyWords = question.split(" ");
 		List<Document> documents = new ArrayList<>();
 		
-		List<Filters> filters  = filtersRepository.findAll();
+		List<Filters> filters  = filtersRepository.findByCommonsWordsWordIn(keyWords);
 		for(Filters f : filters){
 			documents.addAll(f.getDocuments());
 		}
