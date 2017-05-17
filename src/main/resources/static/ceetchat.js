@@ -48,6 +48,7 @@ $(function() {
 	function addResponse(fragment, msj) {
 		fragment.find("p").html(msj);
 		var html = fragment.wrap("<p/>").parent().html();
+		//TODO reemplazar este hidden
 		html = html.replace("hidden", "");
 		chatBox.append(html);
 		chatBox.parent().animate({
@@ -64,7 +65,7 @@ $(function() {
 	function optionsDocument(documents) {
 		var options = "<div class='list-group'>";
 		$.each(documents, function(i,o) {
-			options += "<a class='list-group-item' href='#'>"+o.content+"</a>";
+			options += "<a class='list-group-item' href='#'>"+o.documentName+"</a>";
 		})
 		options += "</div>";
 		return options;

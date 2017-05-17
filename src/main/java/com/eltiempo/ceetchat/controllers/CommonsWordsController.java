@@ -66,7 +66,7 @@ public class CommonsWordsController {
 		Optional<Category> category = categoryRepository.findById(documentDto.getCategory());
 
 		Long documentPos = consecutiveService.getConsecutive(ConsecutiveEnum.DOCUMENT);
-		Document document = new Document(documentPos, documentDto.getContent(), "");
+		Document document = new Document(documentPos, documentDto.getContent(), documentDto.getDocumentName());
 
 		Filters filters = new Filters();
 		Long filterPos = consecutiveService.getConsecutive(ConsecutiveEnum.FILTER);
