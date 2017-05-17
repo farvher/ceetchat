@@ -35,8 +35,9 @@ $(function() {
 	})
 
 	search = function(data) {
+		var titleResponse = "<h6>Te aconsejamos consultar la siguiente informacion : </h6>";
 
-		addResponse(fragmentChat2,  optionsDocument(data.documents) + dym(data.question, data.suggestions) );
+		addResponse(fragmentChat2,  titleResponse+optionsDocument(data.documents) + dym(data.question, data.suggestions) );
 	}
 
 	function addResponse(fragment, msj) {
@@ -46,7 +47,7 @@ $(function() {
 		chatBox.append(html);
 		chatBox.parent().animate({
 			scrollTop : chatBox.height()
-		}, 500);
+		}, 1000);
 
 	}
 
@@ -65,17 +66,21 @@ $(function() {
 		
 	}
 
+	
+
 	function dym(msj, suggestion) {
 		var res = "";
 		if (msj != suggestion) {
-			res = "<p>";
-			res += "<div class='alert alert-warning' >quizas quisiste decir : "+suggestion+"</div>"
-//			res += "quizas quisiste decir : " + suggestion;
-			res += "</p>";
+			res = "<h6>";
+			res += "<div class='alert alert-warning' >Resultados para : ";
+			res += "<a href='#' onclick=\"$('#btn-input').val('"+suggestion+"')\" >"+suggestion+"</a></div>";
+			res += "</h6>";
 
 		}
 		return res;
 	}
+	
+
 
 	function AjaxGenericHTML(url, funct, param) {
 		console.log("busqueda ajax : " + url + " params : "
