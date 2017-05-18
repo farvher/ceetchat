@@ -30,7 +30,6 @@ $(function() {
 			addResponse(fragmentChat, msj)
 			sleep(1000, msj)
 			form.find("input").val("")
-			// sendQuestion();
 		}
 	})
 
@@ -65,13 +64,16 @@ $(function() {
 	function optionsDocument(documents) {
 		var options = "<div class='list-group'>";
 		$.each(documents, function(i,o) {
-			options += "<a class='list-group-item' href='#'>"+o.documentName+"</a>";
+			options += "<a class='list-group-item' onclick='$('\"#\""+o.documentName+"').dialog();'>"+o.documentName+"</a>";
+			$("#dialog").append("<div id='"+o.documentName+"'>");
+			$("#dialog").append(o.content);
+			$("#dialog").append("</div>");
 		})
 		options += "</div>";
 		return options;
 		
 	}
-
+	
 	
 
 	function dym(msj, suggestion) {

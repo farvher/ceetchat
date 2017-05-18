@@ -1,4 +1,4 @@
-package com.eltiempo.ceetchat;
+package com.eltiempo.ceetchat.controllers;
 
 import java.util.List;
 
@@ -14,18 +14,14 @@ import com.eltiempo.ceetchat.util.DidYouMean;
 public class IndexController {
 
 	private static final String INDEX = "index";
-	
+
 	public static final String CHAT = "chat";
 
-	
 	@GetMapping("/")
-	public String getIndex(Model model){
-		
+	public String getIndex(Model model) {
 		return CHAT;
 	}
 
-	
-	
 	@GetMapping(value = "/dym/{word:.*}")
 	@ResponseBody
 	public String index(Model model, @PathVariable String word) {
@@ -38,7 +34,5 @@ public class IndexController {
 		}
 		return "quisiste decir: " + str.toString();
 	}
-	
-	
-	
+
 }
